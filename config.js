@@ -1,6 +1,6 @@
 module.exports = {
     dev: {
-        connectionString:'postgresql://postgres:docker@127.0.0.1:5432/cars_db',
+        connectionString:'postgresql://postgres:docker@127.0.0.1:5432/cars_db' + '?ssl=true',
         port:'3001'
 
     },
