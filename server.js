@@ -1,11 +1,12 @@
 const express = require('express');
-
+const config = require('./config')[process.env.NODE_ENV||'dev']
+const PORT = config.port
 const cors = require('cors')
 const {Client} = require('pg');
-const PORT = process.env.PORT || 3001;
-const connectionString = 'postgresql://postgres:docker@127.0.0.1:5432/cars_db';
+
+
 const client = new Client ({
-    connectionString:connectionString,
+    connectionString:config.connectionString
 });
 
 let corsOptions = {
